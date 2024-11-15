@@ -1,0 +1,39 @@
+{
+    "name": "Pixel Art Top Down - Basic",
+    "author": "Cainos",
+    "description": "Files contain a Unity package and extracted textures for use in other engines.",
+    "start_room": "room_aa_00",
+    "images": ["spr_aa_thumb_00"],
+    "achievements": [
+        {
+          "id": "aa_legendary",
+          "name": "Legendary Status",
+          "description": "Achieve a level of greatness that is truly legendary!",
+          "image": "spr_aa_armchair"
+        },
+        {
+          "id": "aa_treasure_hunter",
+          "name": "Treasure Hunter",
+          "description": "Uncover all hidden treasures in the game!",
+          "image": "spr_aa_crystal_shine"
+        },
+        {
+          "id": "aa_master_strategist",
+          "name": "Master Strategist",
+          "description": "Outsmart every enemy with your brilliant tactics!",
+          "image": "spr_aa_drink_me"
+        },
+        {
+          "id": "aa_social_butterfly",
+          "name": "Social Butterfly",
+          "description": "Make friends with every NPC in the game!",
+          "image": "spr_aa_new_born"
+        },
+        {
+            "id": "aa_ultimate_victory",
+            "name": "Ultimate Victory",
+            "description": "Defeat the final boss without taking any damage!",
+            "image": "spr_aa_schrodingers_cat_alive"
+        }
+      ]
+}
