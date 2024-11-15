@@ -8,7 +8,8 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
 * Bitte kennzeichne alle Ressourcen mit einem Präfix, wie `obj_abc_enemy` oder `spr_abc_apple` damit diese eindeutig sind. Das gilt auch für globale Variablen und Funktionen sowie Structs die in Scripts definiert werden.
 
 # Development Package
-Es gibt ein Package, das du zur Entwicklung importieren musst. Du kannst es [hier](TODO) herunterladen. Im GameMaker kannst du es über `Tools -> Import Local Package` importieren.
+Es gibt ein Package, das du zur Entwicklung importieren musst. Du kannst es [hier](
+https://raw.githubusercontent.com/Moolt/trash-galore-3-dev/refs/heads/master/trash-galore-3-dev.yymps) herunterladen. Im GameMaker kannst du es über `Tools -> Import Local Package` importieren.
 Es enthält folgende Dateien:
 
 ## scr_api.gml
