@@ -4,8 +4,14 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
 
 # Constraints
 * Es gibt keine harten Vorgaben zur Sprache. Du kannst dein Spiel aber für Lokalisierung vorbereiten, falls diese später implementiert wird, [siehe hier](#lokalisierung)
-* Die Auflösung ist 640 x 360. Der Launcher bietet die Möglichkeit x2 und x3 zu vergrößern. Weitere Informationen folgen.
-* Bitte kennzeichne alle Ressourcen mit einem Präfix, wie `obj_abc_enemy` oder `spr_abc_apple` damit diese eindeutig sind. Das gilt auch für globale Variablen und Funktionen sowie Structs die in Scripts definiert werden.
+* Die Ziel-Auflösung des Launchers ist 640 * 360. Dieser bietet allerdings die Möglichkeit die Anzeige zu skalieren. Für dein Spiel kannst du dir also eine der folgenden Auflösungen aussuchen:
+  * 640 * 360
+  * 1280 * 720
+  * 1920 * 1080
+  * 2560 * 1440
+* Bitte kennzeichne alle Ressourcen mit einem Präfix, wie `obj_abc_enemy` oder `spr_abc_apple` damit diese eindeutig sind. 
+  * Das gilt auch für globale Variablen und Funktionen sowie Structs die in Scripts definiert werden.
+  * Die mitgelieferten Dateien `game.json` und `scr_api` sollten nicht umbenannt werden
 
 # Development Package
 Es gibt ein Package, das du zur Entwicklung importieren musst. Du kannst es [hier](
