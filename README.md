@@ -77,7 +77,6 @@ API.localize("some_key"); // Gibt "" zurück, da Lokalisierung noch nicht implem
 API.localize_args("player_status", [_health, _mana], "The player has {} health and {} mana left."); // Gibt z.B. "The player has 98 health and 23 mana left." zurück
 ```
 
-
 ## game.json
 Die `game.json` landet in den "Included Files". Im Projektverzeichnis entspricht das dem `datafiles` Ordner.
 
@@ -106,6 +105,9 @@ Die `game.json` enthält alle notwendigen Metadaten, damit dein Spiel später ri
     ]
 }
 ```
+
+Thumbnails / `images`: Die Thumbnails sollten keine Schrift und kein Logo enthalten. Wenn du ein Logo im Hauptmenü anzeigen möchtest, melde dich bitte bei mir. Die Thumbnailauflösung ist 640 x 360.
+Achievements: Die Icons sollten einen deckenden Hintergrund haben. Die Auflösung ist 32 x 32.
 
 # Deployment
 
