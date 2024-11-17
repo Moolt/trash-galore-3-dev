@@ -106,8 +106,9 @@ Die `game.json` enthält alle notwendigen Metadaten, damit dein Spiel später ri
 }
 ```
 
-Thumbnails / `images`: Die Thumbnails sollten keine Schrift und kein Logo enthalten. Wenn du ein Logo im Hauptmenü anzeigen möchtest, melde dich bitte bei mir. Die Thumbnailauflösung ist 640 x 360.
-Achievements: Die Icons sollten einen deckenden Hintergrund haben. Die Auflösung ist 32 x 32.
+**Thumbnails / `images`**: Die Thumbnails sollten keine Schrift und kein Logo enthalten. Wenn du ein Logo im Hauptmenü anzeigen möchtest, melde dich bitte bei mir. Die Thumbnailauflösung ist 640 x 360.
+
+**Achievements**: Die Icons sollten einen deckenden Hintergrund haben. Die Auflösung ist 32 x 32.
 
 # Deployment
 
