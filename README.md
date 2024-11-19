@@ -101,7 +101,7 @@ Die `game.json` enthält alle notwendigen Metadaten, damit dein Spiel später ri
     "author": "Dein Name",
     "description": "Eine kurze Beschreibung deines Spiels",
     "start_room": "room_moo_game_00", // Der Raum, den der Launcher aufrufen soll
-    "images": ["spr_moo_thumb_00"], // Screenshots deines Spiels, die im Launcher angezeigt werden sollen. AUFLÖSUNG: 640 x 360
+    "images": ["spr_moo_thumb_00"], // Screenshots deines Spiels, die im Launcher angezeigt werden sollen.
     "achievements": [
         {
             "id": "aa_legendary",
@@ -113,15 +113,30 @@ Die `game.json` enthält alle notwendigen Metadaten, damit dein Spiel später ri
             "id": "aa_treasure_hunter",
             "name": "Treasure Hunter",
             "description": "Uncover all hidden treasures in the game!",
-            "image": "spr_moo_achievement_icon_paint" // Optionaler Parameter: Ein Icon, das im Launcher zusammen mit dem Achievement angezeigt wird. AUFLÖSUNG: 32 x 32
+            "image": "spr_moo_achievement_icon_paint" // Optionaler Parameter: Ein Icon, das im Launcher zusammen mit dem Achievement angezeigt wird.
         }
     ]
 }
 ```
 
-**Thumbnails / `images`**: Die Thumbnails sollten keine Schrift und kein Logo enthalten. Wenn du ein Logo im Hauptmenü anzeigen möchtest, melde dich bitte bei mir. Die Thumbnailauflösung ist 640 x 360.
+### Thumbnails / `images`
 
-**Achievements**: Die Icons sollten einen deckenden Hintergrund haben. Die Auflösung ist 32 x 32.
+Die Thumbnails sollten keine Schrift, kein Logo und keinen Rahmen enthalten. Die Thumbnailauflösung ist 640 x 360.
+
+<p align="center">
+  <img src=".documentation/thumbnails.png" />
+</p>
+
+### Achievements
+Für die Icons der Achievements gibt es ein paar Einschränkungen. Bei Unklarheiten bitte nachfragen.
+
+* Transparenter Hintergrund
+* Auflösung von 32 x 32 Pixel
+* Einfarbig und weiß
+* Ohne Rahmen
+* 3 Pixel Abstand in jede Richtung (Padding)
+
+<img src=".documentation/achievements.png" />
 
 # Deployment
 
