@@ -1,4 +1,7 @@
-// API Version 1.0.0
+// API Version 1.1.0
+
+// -- Changelog --
+// 1.1.0: Adds methods for playing sounds and music
 
 #macro API global.api
 
@@ -196,6 +199,136 @@ function _api_base() constructor {
 		
 		return _result;
 	}
+	
+	/**
+	* This function plays any sound asset in your game using any combination of parameters.
+	* 
+	* @param {Struct} _struct - A struct containing the key-value pairs for each of the parameters that you want to set. The sound key is required and takes a Sound Asset as a value.
+	* 
+	* @returns {Sound.Id} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+	function play_sound_ext(_struct) {
+		return audio_play_sound_ext(_struct);
+    }
+
+	/**
+	* Plays a sound on a specific audio emitter and registers it for gain management.
+	* 
+	* @param {asset} _sound - The sound asset to play.
+	* @param {real} _emitter - The audio emitter to attach the sound to.
+	* @param {boolean} [_loop=false] - Whether the sound should loop.
+	* @param {real} [_gain=1] - Initial gain (volume) for the sound.
+	* @param {real} [_pitch=1] - Pitch adjustment for the sound.
+	* @param {real} [_listener_mask=0xFFFFFFFF] - Listener mask for 3D sound.
+	* 
+	* @returns {Id.Sound} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+    function play_sound_on(_sound, _emitter, _loop = false, _gain = 1, _pitch = 1, _listener_mask = 0xFFFFFFFF) {
+		return audio_play_sound_on(_sound, _emitter, _loop, _gain, _pitch, _listener_mask);
+    }
+
+	/**
+	* Plays a 3D sound at a specified position with extended parameters and registers it for gain management.
+	* 
+	* @param {asset} _sound - The sound asset to play.
+	* @param {real} _x - X-coordinate of the sound's position.
+	* @param {real} _y - Y-coordinate of the sound's position.
+	* @param {real} _z - Z-coordinate of the sound's position.
+	* @param {real} [_falloff_ref=1] - Reference distance for sound attenuation.
+	* @param {real} [_falloff_max=100] - Maximum distance for sound attenuation.
+	* @param {real} [_falloff_factor=1] - Factor controlling the rate of falloff.
+	* @param {boolean} [_loop=false] - Whether the sound should loop.
+	* @param {real} [_gain=1] - Initial gain (volume) for the sound.
+	* @param {real} [_pitch=1] - Pitch adjustment for the sound.
+	* @param {real} [_listener_mask=0xFFFFFFFF] - Listener mask for 3D sound.
+	* 
+	* @returns {Sound.Id} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+    function play_sound_at(_sound, _x, _y, _z, _falloff_ref = 1, _falloff_max = 100, _falloff_factor = 1, _loop = false, _gain = 1, _pitch = 1, _listener_mask = 0xFFFFFFFF) {
+		return audio_play_sound_at(_sound, _x, _y, _z, _falloff_ref, _falloff_max, _falloff_factor, _loop, _gain, _pitch, _listener_mask);
+    }
+
+	/**
+	* Plays a sound with optional extended parameters and registers it for gain management.
+	* 
+	* @param {asset} _sound - The sound asset to play.
+	* @param {real} [_priority=1] - Priority of the sound (higher value plays first if resources are limited).
+	* @param {boolean} [_loop=false] - Whether the sound should loop.
+	* @param {real} [_gain=1] - Initial gain (volume) for the sound.
+	* @param {real} [_offset=0] - The time (in seconds) to set the start point to. Values longer than the length of the given sound are ignored.
+	* @param {real} [_pitch=1] - Pitch adjustment for the sound.
+	* @param {real} [_listener_mask=0xFFFFFFFF] - Listener mask for 3D sound.
+	* 
+	* @returns {Sound.Id} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+    function play_sound(_sound, _priority = 1, _loop = false, _gain = 1, _offset = 0, _pitch = 1, _listener_mask = 0xFFFFFFFF) {
+        return audio_play_sound(_sound, _priority, _loop, _gain, _offset, _pitch, _listener_mask);
+    }
+	
+	/**
+	* This function plays any sound asset in your game using any combination of parameters.
+	* 
+	* @param {Struct} _struct - A struct containing the key-value pairs for each of the parameters that you want to set. The sound key is required and takes a Sound Asset as a value.
+	* 
+	* @returns {Sound.Id} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+	function play_music_ext(_struct) {
+		return audio_play_sound_ext(_struct);
+    }
+
+	/**
+	* Plays a sound on a specific audio emitter and registers it for gain management.
+	* 
+	* @param {asset} _sound - The sound asset to play.
+	* @param {real} _emitter - The audio emitter to attach the sound to.
+	* @param {boolean} [_loop=false] - Whether the sound should loop.
+	* @param {real} [_gain=1] - Initial gain (volume) for the sound.
+	* @param {real} [_pitch=1] - Pitch adjustment for the sound.
+	* @param {real} [_listener_mask=0xFFFFFFFF] - Listener mask for 3D sound.
+	* 
+	* @returns {Id.Sound} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+    function play_music_on(_sound, _emitter, _loop = false, _gain = 1, _pitch = 1, _listener_mask = 0xFFFFFFFF) {
+		return audio_play_sound_on(_sound, _emitter, _loop, _gain, _pitch, _listener_mask);
+    }
+
+	/**
+	* Plays a 3D sound at a specified position with extended parameters and registers it for gain management.
+	* 
+	* @param {asset} _sound - The sound asset to play.
+	* @param {real} _x - X-coordinate of the sound's position.
+	* @param {real} _y - Y-coordinate of the sound's position.
+	* @param {real} _z - Z-coordinate of the sound's position.
+	* @param {real} [_falloff_ref=1] - Reference distance for sound attenuation.
+	* @param {real} [_falloff_max=100] - Maximum distance for sound attenuation.
+	* @param {real} [_falloff_factor=1] - Factor controlling the rate of falloff.
+	* @param {boolean} [_loop=false] - Whether the sound should loop.
+	* @param {real} [_gain=1] - Initial gain (volume) for the sound.
+	* @param {real} [_pitch=1] - Pitch adjustment for the sound.
+	* @param {real} [_listener_mask=0xFFFFFFFF] - Listener mask for 3D sound.
+	* 
+	* @returns {Sound.Id} - The sound instance ID, or -1 if the sound could not be played.
+	*/
+    function play_music_at(_sound, _x, _y, _z, _falloff_ref = 1, _falloff_max = 100, _falloff_factor = 1, _loop = false, _gain = 1, _pitch = 1, _listener_mask = 0xFFFFFFFF) {
+		return audio_play_sound_at(_sound, _x, _y, _z, _falloff_ref, _falloff_max, _falloff_factor, _loop, _gain, _pitch, _listener_mask);
+    }
+
+	/**
+	 * Plays a sound with optional extended parameters and registers it for gain management.
+	 * 
+	 * @param {asset} _sound - The sound asset to play.
+	 * @param {real} [_priority=1] - Priority of the sound (higher value plays first if resources are limited).
+	 * @param {boolean} [_loop=false] - Whether the sound should loop.
+	 * @param {real} [_gain=1] - Initial gain (volume) for the sound.
+	 * @param {real} [_offset=0] - The time (in seconds) to set the start point to. Values longer than the length of the given sound are ignored.
+	 * @param {real} [_pitch=1] - Pitch adjustment for the sound.
+	 * @param {real} [_listener_mask=0xFFFFFFFF] - Listener mask for 3D sound.
+	 * 
+	 * @returns {Sound.Id} - The sound instance ID, or -1 if the sound could not be played.
+	 */
+    function play_music(_sound, _priority = 1, _loop = false, _gain = 1, _offset = 0, _pitch = 1, _listener_mask = 0xFFFFFFFF) {
+        return audio_play_sound(_sound, _priority, _loop, _gain, _offset, _pitch, _listener_mask);
+    }
 }
 
 global.api = new _api_base();
