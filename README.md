@@ -70,16 +70,16 @@ API.action_check(INPUT_ACTION.ACTION_PRIMARY);
 Die Musik- und Sound-Lautstärke lässt sich im Launcher einstellen.
 Wenn du Sounds abspielst, dann tu das am besten über die mitgelieferten Funktionen:
 
-```
-  API.play_sound(snd_abc_crash);
-  API.play_music(bgm_abc_ambient);
+```javascript
+API.play_sound(snd_abc_crash);
+API.play_music(bgm_abc_ambient);
 ```
 
 Für jede `play_`-Methode im GameMaker gibt es in der Api ein Gegenstück jeweils für Sounds oder Musik, welche die globale Lautstärke übernehmen.
 
 Alternativ kannst du über die Api auch einfach auf die Lautstärke zugreifen:
 
-```
+```javascript
 audio_play_sound(bgm_abc_ambient, 1, false, API.audio_get_music_volume());
 audio_play_sound(snd_abc_crash, 1, false, API.audio_get_sound_volume());
 ```
@@ -171,5 +171,3 @@ Die Zugangsdaten sind:
 Zum Ersetzen klappt am Besten Drag & Drop.
 
 Durch den Upload wird ein GitHub-Workflow angestoßen, der automatisch den Launcher mit deinem Spiel für Linux, Windows und HTML5 baut. Falls du zum GitHub-Repository eingeladen werden möchtest, melde dich gerne bei mir (Moolt).
-
-TODO: (esc) overlay, esc reserviert!
