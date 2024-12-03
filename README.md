@@ -3,7 +3,7 @@
 Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mir Mühe gegeben, das Drumherum möglichst einfach zu gestalten. Ein paar Dinge gibt es trotzdem zu beachten, die ich im Folgenden kurz anspreche.
 
 # Constraints
-* Bitte kennzeichne alle Ressourcen mit einem Präfix, wie `obj_abc_enemy` oder `spr_abc_apple` damit diese eindeutig sind. 
+* Bitte kennzeichne alle Ressourcen mit einem Präfix, wie `obj_abc_enemy` oder `spr_abc_apple` damit diese eindeutig sind.
   * Das gilt auch für globale Variablen und Funktionen sowie Structs die in Scripts definiert werden.
   * Die mitgelieferten Dateien `game.json` und `scr_api` sollten nicht umbenannt werden
 * Es gibt keine harten Vorgaben zur Sprache. Du kannst dein Spiel aber für Lokalisierung vorbereiten, falls diese später implementiert wird, [siehe hier](#lokalisierung)
@@ -25,6 +25,7 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
   ```
 
   Beim Nutzen von Funktionen wie `window_get_height` solltest du außerdem darauf achten, dass das Fenster durch die Skalierung eine Variable Größe hat.
+* Der Launcher enthält bereits eine Pause-Funktion mit einem Menü. Das musst du nicht selbst bauen. Dadurch ist die Escape-Taste (bzw. `INPUT_ACTION.UI_QUIT`) bereits belegt und sollte von dir nicht mehr genutzt werden.
 
 # Development Package
 Es gibt ein Package, das du zur Entwicklung importieren musst. Du kannst es [hier](
