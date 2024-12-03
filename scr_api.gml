@@ -1,7 +1,8 @@
-// API Version 1.1.0
+// API Version 1.2.0
 
 // -- Changelog --
 // 1.1.0: Adds methods for playing sounds and music
+// 1.2.0: Adds JUMP, SPRINT and CROCH input actions. Fixes controller movement.
 
 #macro API global.api
 
@@ -22,7 +23,10 @@ enum INPUT_ACTION {
     MOVE_LEFT,
     MOVE_RIGHT,
     ACTION_PRIMARY,
-    ACTION_SECONDARY
+    ACTION_SECONDARY,
+	JUMP,
+	SPRINT,
+	CROUCH
 }
 
 function _api_base() constructor {
@@ -338,25 +342,28 @@ function _controls() constructor {
 	keyboard_bindings = ds_map_create();
 	gamepad_bindings = ds_map_create();
 
-	// -- Gamepad Controls --
+	// -- Keyboard Controls --
 	// UI
-	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_UP] = [ord("W"), vk_up];
-	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_DOWN] = [ord("S"), vk_down];
-	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_LEFT] = [ord("A"), vk_left];
-	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_RIGHT] = [ord("D"), vk_right];
+	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_UP] = [ord("W"), ord("P"), vk_up];
+	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_DOWN] = [ord("S"), ord("Ö"), vk_down];
+	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_LEFT] = [ord("A"), ord("L"), vk_left];
+	keyboard_bindings[? INPUT_ACTION.UI_NAVIGATE_RIGHT] = [ord("D"), ord("Ä"), vk_right];
 	keyboard_bindings[? INPUT_ACTION.UI_SELECT] = [vk_enter];
 	keyboard_bindings[? INPUT_ACTION.UI_BACK] = [vk_escape];
 	keyboard_bindings[? INPUT_ACTION.UI_QUIT] = [vk_escape];
 
 	// Movement
-	keyboard_bindings[? INPUT_ACTION.MOVE_UP] = [ord("W"), vk_up];
-	keyboard_bindings[? INPUT_ACTION.MOVE_DOWN] = [ord("S"), vk_down];
-	keyboard_bindings[? INPUT_ACTION.MOVE_LEFT] = [ord("A"), vk_left];
-	keyboard_bindings[? INPUT_ACTION.MOVE_RIGHT] = [ord("D"), vk_right];
+	keyboard_bindings[? INPUT_ACTION.MOVE_UP] = [ord("W"), ord("P"), vk_up];
+	keyboard_bindings[? INPUT_ACTION.MOVE_DOWN] = [ord("S"), ord("Ö"), vk_down];
+	keyboard_bindings[? INPUT_ACTION.MOVE_LEFT] = [ord("A"), ord("L"), vk_left];
+	keyboard_bindings[? INPUT_ACTION.MOVE_RIGHT] = [ord("D"), ord("Ä"), vk_right];
 
 	// Gameplay Actions
-	keyboard_bindings[? INPUT_ACTION.ACTION_PRIMARY] = [vk_space];
-	keyboard_bindings[? INPUT_ACTION.ACTION_SECONDARY] = [ord("E")];
+	keyboard_bindings[? INPUT_ACTION.ACTION_PRIMARY] = [ord("Q"), ord("Ü")];
+	keyboard_bindings[? INPUT_ACTION.ACTION_SECONDARY] = [ord("E"), ord("O")];
+	keyboard_bindings[? INPUT_ACTION.JUMP] = [vk_space];
+	keyboard_bindings[? INPUT_ACTION.SPRINT] = [vk_shift];
+	keyboard_bindings[? INPUT_ACTION.CROUCH] = [vk_control];
 
 	// -- Gamepad Controls --
 	// UI 
@@ -369,14 +376,17 @@ function _controls() constructor {
 	gamepad_bindings[? INPUT_ACTION.UI_QUIT] = [gp_start];
 
 	// Movement
-	gamepad_bindings[? INPUT_ACTION.MOVE_UP] = [gp_axislv];
-	gamepad_bindings[? INPUT_ACTION.MOVE_DOWN] = [gp_axislv];
-	gamepad_bindings[? INPUT_ACTION.MOVE_LEFT] = [gp_axislh];
-	gamepad_bindings[? INPUT_ACTION.MOVE_RIGHT] = [gp_axislh];
+	gamepad_bindings[? INPUT_ACTION.MOVE_UP] = [gp_padu];
+	gamepad_bindings[? INPUT_ACTION.MOVE_DOWN] = [gp_padd];
+	gamepad_bindings[? INPUT_ACTION.MOVE_LEFT] = [gp_padl];
+	gamepad_bindings[? INPUT_ACTION.MOVE_RIGHT] = [gp_padr];
 
 	// Gameplay Actions
 	gamepad_bindings[? INPUT_ACTION.ACTION_PRIMARY] = [gp_face1];
 	gamepad_bindings[? INPUT_ACTION.ACTION_SECONDARY] = [gp_face2];
+	keyboard_bindings[? INPUT_ACTION.JUMP] = [gp_face1];
+	keyboard_bindings[? INPUT_ACTION.SPRINT] = [gp_face3];
+	keyboard_bindings[? INPUT_ACTION.CROUCH] = [gp_face4];
 
 	global.gamepad_id = -1; // Default to -1, indicating no gamepad
 
