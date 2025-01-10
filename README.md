@@ -9,6 +9,8 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
 * Es gibt keine harten Vorgaben zur Sprache. Du kannst dein Spiel aber für Lokalisierung vorbereiten, falls diese später implementiert wird, [siehe hier](#lokalisierung)
 * Der Launcher bietet bereits Einstellungen zu Auflösungen, Fullscreen und Lautstärke. **Baue bitte keine eigenen Möglichkeiten, diese Werte zu ändern.**
 * Der Launcher zeigt bereits ein Hauptmenü für dein Spiel an, bestehend aus "Start", "Beschreibung" und "Achievements". **Überlege dir bitte, ob du wirklich ein eigenes Hauptmenü brauchst, bevor du eines einbaust.**
+* Der Launcher enthält bereits eine Pause-Funktion mit einem Menü. Das musst du nicht selbst bauen. **Dadurch ist die Escape-Taste (bzw. `INPUT_ACTION.UI_QUIT`) bereits belegt und sollte von dir nicht mehr genutzt werden.**
+* Events wie `Game Start` und `Game End` werden zum Start des Launchers ausgeführt, **nicht** zum Start deines Spiels. Bitte verzichte auf diese Events.
 * Die Ziel-Auflösung des Launchers ist 640 * 360. Dieser bietet allerdings die Möglichkeit die Anzeige zu skalieren. Für dein Spiel kannst du dir also eine der folgenden Auflösungen aussuchen:
   * 320 * 180
   * 640 * 360
@@ -21,13 +23,12 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
   surface_resize(application_surface, 1280, 720); // Deine Auflösung
   ```
 
-  Sollen die Pixel weich interpoliert werden nutze zusätzlich:
+  aus. Sollen die Pixel weich interpoliert werden nutze zusätzlich:
   ```javascript
   gpu_set_texfilter(true);
   ```
 
   Beim Nutzen von Funktionen wie `window_get_height` solltest du außerdem darauf achten, dass das Fenster durch die Skalierung eine Variable Größe hat.
-* Der Launcher enthält bereits eine Pause-Funktion mit einem Menü. Das musst du nicht selbst bauen. **Dadurch ist die Escape-Taste (bzw. `INPUT_ACTION.UI_QUIT`) bereits belegt und sollte von dir nicht mehr genutzt werden.**
 
 # Development Package
 Es gibt ein Package, das du zur Entwicklung importieren musst. Du kannst es [hier](
@@ -79,15 +80,6 @@ API.play_music(bgm_abc_ambient);
 ```
 
 Für jede `play_`-Methode im GameMaker gibt es in der Api ein Gegenstück jeweils für Sounds oder Musik, welche die globale Lautstärke übernehmen.
-
-Alternativ kannst du über die Api auch einfach auf die Lautstärke zugreifen:
-
-```javascript
-audio_play_sound(bgm_abc_ambient, 1, false, API.audio_get_music_volume());
-audio_play_sound(snd_abc_crash, 1, false, API.audio_get_sound_volume());
-```
-
-Das ist allerdings nicht empfohlen, da Änderungen an der Lautstärke in diesem Fall nicht in Echtzeit übernommen werden.
 
 **Achtung**: Bitte verzichte auf die Nutzung von Audio Groups, da diese in Packages nicht exportiert werden.
 
