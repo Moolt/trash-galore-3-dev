@@ -7,6 +7,8 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
   * Das gilt auch für globale Variablen und Funktionen sowie Structs die in Scripts definiert werden.
   * Die mitgelieferten Dateien `game.json` und `scr_api` sollten nicht umbenannt werden
 * Es gibt keine harten Vorgaben zur Sprache. Du kannst dein Spiel aber für Lokalisierung vorbereiten, falls diese später implementiert wird, [siehe hier](#lokalisierung)
+* Der Launcher bietet bereits Einstellungen zu Auflösungen, Fullscreen und Lautstärke. **Baue bitte keine eigenen Möglichkeiten, diese Werte zu ändern.**
+* Der Launcher zeigt bereits ein Hauptmenü für dein Spiel an, bestehend aus "Start", "Beschreibung" und "Achievements". **Überlege dir bitte, ob du wirklich ein eigenes Hauptmenü brauchst, bevor du eines einbaust.**
 * Die Ziel-Auflösung des Launchers ist 640 * 360. Dieser bietet allerdings die Möglichkeit die Anzeige zu skalieren. Für dein Spiel kannst du dir also eine der folgenden Auflösungen aussuchen:
   * 320 * 180
   * 640 * 360
@@ -25,7 +27,7 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
   ```
 
   Beim Nutzen von Funktionen wie `window_get_height` solltest du außerdem darauf achten, dass das Fenster durch die Skalierung eine Variable Größe hat.
-* Der Launcher enthält bereits eine Pause-Funktion mit einem Menü. Das musst du nicht selbst bauen. Dadurch ist die Escape-Taste (bzw. `INPUT_ACTION.UI_QUIT`) bereits belegt und sollte von dir nicht mehr genutzt werden.
+* Der Launcher enthält bereits eine Pause-Funktion mit einem Menü. Das musst du nicht selbst bauen. **Dadurch ist die Escape-Taste (bzw. `INPUT_ACTION.UI_QUIT`) bereits belegt und sollte von dir nicht mehr genutzt werden.**
 
 # Development Package
 Es gibt ein Package, das du zur Entwicklung importieren musst. Du kannst es [hier](
@@ -156,6 +158,16 @@ Für die Icons der Achievements gibt es ein paar Einschränkungen. Bei Unklarhei
 Um das Spiel in den Launcher zu integrieren musst du es bitte über `Tools -> Create Local Package` exportieren. ❗ Bitte achte nochmal darauf, dass alle Ressourcen mit Präfixen versehen sind.
 
 Hinten raus kommt eine `.yymps`-Datei.
+
+## Testen
+Bevor du dein Spiel einreichst, teste es bitte vorher einmal im Launcher.
+Lade den Launcher dafür [hier](https://github.com/Moolt/trash-galore-3/archive/refs/heads/master.zip) herunter. 
+
+Öffne das Projekt und importiere dein Package über `Tools > Import Local Package`. `scr_api` bitte nicht überschreiben.
+
+Kopiere anschließend den Inhalt deiner `game.json` in das Array in der `games.json`.
+
+Dann kannst du den Launcher starten.
 
 ## Upload
 
