@@ -6,6 +6,7 @@ Damit du dich auf die Entwicklung deines Spiels konzentrieren kannst habe ich mi
 * Bitte kennzeichne alle Ressourcen mit einem Präfix, wie `obj_abc_enemy` oder `spr_abc_apple` damit diese eindeutig sind.
   * Das gilt auch für globale Variablen und Funktionen sowie Structs die in Scripts definiert werden.
   * Die mitgelieferten Dateien `game.json` und `scr_api` sollten nicht umbenannt werden
+* Die Room-Order geht beim Export verloren. Verlasse nicht nicht auf Funktionen wie `room_goto_next` sondern navigiere gezielt zu den Räumen.
 * Es gibt keine harten Vorgaben zur Sprache. Du kannst dein Spiel aber für Lokalisierung vorbereiten, falls diese später implementiert wird, [siehe hier](#lokalisierung)
 * Der Launcher bietet bereits Einstellungen zu Auflösungen, Fullscreen und Lautstärke. **Baue bitte keine eigenen Möglichkeiten, diese Werte zu ändern.**
 * Der Launcher zeigt bereits ein Hauptmenü für dein Spiel an, bestehend aus "Start", "Beschreibung" und "Achievements". **Überlege dir bitte, ob du wirklich ein eigenes Hauptmenü brauchst, bevor du eines einbaust.**
