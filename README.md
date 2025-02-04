@@ -164,9 +164,11 @@ Dann kannst du den Launcher starten.
 
 ## Upload
 
-Lade die `.yymps`-Datei jederzeit auf [https://filebrowser.moolt.de](https://filebrowser.moolt.de) hoch.
+Lade die `.yymps`-Datei bitte irgendwo hoch und schicke mir den Link.
 
-Die Zugangsdaten sind:
+~~Lade die `.yymps`-Datei jederzeit auf [https://filebrowser.moolt.de](https://filebrowser.moolt.de) hoch.~~
+
+~~Die Zugangsdaten sind:~~
 
 | Nutzername  | Passwort                      |
 | ----------- | ----------------------------- |
