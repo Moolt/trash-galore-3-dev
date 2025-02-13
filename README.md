@@ -97,6 +97,18 @@ API.localize("some_key"); // Gibt "" zurück, da Lokalisierung noch nicht implem
 API.localize_args("player_status", [_health, _mana], "The player has {} health and {} mana left."); // Gibt z.B. "The player has 98 health and 23 mana left." zurück
 ```
 
+#### Achievements
+
+Achievements lassen sich mit `API.unlock_achievement` freischalten. Über geben wird die `id` des achievements. Die Methode überprüft bereits, ob das Achievement freigeschaltet ist.
+
+```javascript
+API.unlock_achievement("abc_great_success");
+```
+
+Außerhalb des Launchers wird durch den Aufruf nur eine Debug-Ausgabe ausgelöst. Um die Achievements in Aktion zu prüfen, [integriere dein Spiel testweise in den Launcher](#testen).
+
+Es gibt auch eine `achievement_is_unlocked` Methode um zu prüfen, ob ein Achievement freigeschaltet ist.
+
 ## game.json
 Die `game.json` landet in den "Included Files". Im Projektverzeichnis entspricht das dem `datafiles` Ordner.
 
@@ -135,6 +147,12 @@ Die Thumbnails sollten keine Schrift, kein Logo und keinen Rahmen enthalten. Die
 </p>
 
 ### Achievements
+
+#### Sortierung
+
+In der List der Achievements findet eine alphabetische Sortierung anhand der `id` statt.
+
+#### Icons
 Für die Icons der Achievements gibt es ein paar Einschränkungen. Bei Unklarheiten bitte nachfragen.
 
 * Transparenter Hintergrund
