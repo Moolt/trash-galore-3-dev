@@ -52,11 +52,11 @@ API.unlock_achievement("abc_great_success");
 Die Api stellt einige Funktionen bereit, um den Spielstand zu speichern und zu laden.
 
 ```javascript
-API.write_number("My great game", "my_number", 123);
+API.write_real("My great game", "my_number", 123);
 API.write_string("My great game", "my_string", "Hello world!");
 API.write_boolean("My great game", "my_boolean", true);
 
-show_debug_message(API.read_number("My great game", "my_number"));
+show_debug_message(API.read_real("My great game", "my_number"));
 show_debug_message(API.read_string("My great game", "my_string"));
 show_debug_message(API.read_boolean("My great game", "my_boolean"));
 ```
